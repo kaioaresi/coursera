@@ -10,19 +10,15 @@ def computador_escolhe_jogada(n, m):
 
     return r
 
-
-#n = int(input('Quantas peças? '))
-#m = int(input('Limite de peças por jogada? '))
-#print(computador_escolhe_jogada(n, m))
-
-
-
 def usuario_escolhe_jogada(n,m):
+	
 	jogada = int(input('Quantas peças você vai tirar? '))
 
-	while jogada > m or jogada <= 0:
+	while jogada > m or jogada < 1:
+		
 		print('Oops! Jogada inválida! Tente de novo.')
 		jogada = int(input('Quantas peças você vai tirar? '))
+
 	return jogada
 
 
@@ -106,6 +102,5 @@ def main():
 	else:
 		if opcao == 2:
 			campeonato()
-
 
 partida()
