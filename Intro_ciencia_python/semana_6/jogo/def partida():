@@ -1,0 +1,36 @@
+def partida():
+	n=int(input("Quantas peças? "))
+	m=int(input("Limite de peças por jogada? "))
+
+	if not n % ( m + 1 ) == 0 or n <= m:
+		print("Computador começa!")
+	
+		while n > 0:
+			n -= computador_escolhe_jogada(n, m)
+			if n <= 0:
+				print("Fim do jogo! O computador ganhou!")
+				break
+			print("Agora restam", n, "peças no tabuleiro.")
+		
+			n -= usuario_escolhe_jogada(n, m)
+			if n <= 0:
+				print("Fim do jogo! Você ganhou!")
+				break
+			print("Agora restam", n, "peças no tabuleiro.")
+		
+	else:
+		print("Você começa!")
+	
+		while n>0:
+			n=n-usuario_escolhe_jogada(n, m)
+			if n<=0:
+				print("Fim do jogo! Você ganhou!")
+				break
+			print("Agora restam", n, "peças no tabuleiro.")
+		
+			n=n-computador_escolhe_jogada(n, m)
+			if n<=0:
+				print("Fim do jogo! O computador ganhou!")
+				break
+			print("Agora restam", n, "peças no tabuleiro.")
+		
